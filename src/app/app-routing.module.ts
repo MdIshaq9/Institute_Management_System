@@ -25,6 +25,9 @@ import { AuthenticationGuard } from './authentication.guard';
 import { NotifyGuard } from './notify.guard';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ParentComponent } from './parent/parent.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
 
@@ -52,7 +55,10 @@ const routes: Routes = [
       {path: 'studentform',component:StudentFormComponent},
       {path: 'user-details/:id', component:UserDetailsComponent},
       {path: 'edit-user/:id', component:CreateUserComponent},
-      {path: 'parent', component:ParentComponent}
+      {path: 'parent', component:ParentComponent},
+      {path: 'items', component:ItemsComponent},
+      {path: 'nav', component:NavComponent},
+      {path: 'cart', component:CartComponent}
     
     ]
   },
