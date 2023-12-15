@@ -1,0 +1,15 @@
+<div class="parent">
+    <div class="parent1"  *ngFor="let item of items">
+        <div class="chlid">
+            <img src="{{item.image}}" alt="" height="150px" width="150px">
+            <p>{{item.title}}</p>
+            <p>&#8377;{{item.price}}</p>
+            <!-- <p>{{item.description}}</p> -->
+            <p>{{item.category}}</p>
+            <p>{{item.rating.rate}}({{item.rating.count}})</p>
+        </div>
+    </div>
+
+
+
+</div>

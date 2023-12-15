@@ -1,0 +1,75 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.parent {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+}
+
+.tsection {
+    box-sizing: border-box;
+    height: 30%;
+    width: 100%;
+    border: 1px solid green;
+    display: flex;
+    background-color: rgb(155, 255, 255);
+    padding: 10px;
+}
+
+.tsectionleft {
+    width: 50%;
+    height: 100%;
+    /* display: flex; */
+    /* text-align: left; */
+}
+
+.tsectionright {
+    width: 50%;
+    height: 100%;
+}
+
+button {
+    padding: 8px;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px 2px rgb(66, 66, 66);
+}
+.bluebg{
+    background-color: blue;
+}
+.yellowbg{
+    background-color: rgb(245, 245, 0);
+}
+.lightbluebg{
+    background-color: skyblue;
+}
+.darkgraybg{
+    background-color: rgb(79, 79, 79);
+}
+.greenbg{
+    background-color: green;
+}
+.fcwhite{
+    color:white;
+}
+input {
+    padding:5px;
+}
+.bsection{
+    height: 70%;
+    background-color: rgb(56, 54, 54);
+    width: 100%;
+    border: 1px solid red;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}

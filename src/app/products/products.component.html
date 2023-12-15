@@ -1,0 +1,67 @@
+<div class="parent">
+
+    <div class="tsection">
+
+        <div class="tsectionleft">
+            <input type="search" name="search" id="search" placeholder="search">&nbsp;
+            <button class="bluebg fcwhite" onclick="freedelivery()">Only free delivery</button><br>
+            <button class="yellowbg" onclick="plowtohigh()">Price low to high</button>
+            <button class="yellowbg" onclick="phightolow()">Price high to low</button>
+            <button class="yellowbg" onclick="slowtohigh()">Rating low to high</button>
+            <button class="yellowbg" onclick="shightolow()">rating high to low</button><br>
+            <button class="lightbluebg" onclick="discount()">Apply 50% discount</button>
+            <button class="lightbluebg" onclick="delivery()">Price with delivery charges</button><br>
+            <button class="darkgraybg fcwhite" onclick="total()">Total price</button>
+            <button class="darkgraybg fcwhite" (click)="tcitems()">Total cart items</button>
+        </div>
+
+        <div class="tsectionright">
+            <!-- <h2 id="pname">___</h2> -->
+            <label for="">Name : </label>
+            <input type="text" id="name" [(ngModel)]="name"><br><br>
+
+            <label for="">Price : </label>
+            <input type="number" name="" id="price" [(ngModel)]="price"><br><br>
+
+            <label for="">Rating : </label>
+            <input type="number" name="" id="rating" [(ngModel)]="rating"><br><br>
+
+            <label for="">Free Delivery : </label><br>
+
+            <input id="freedelivery" type="radio" name="freedelivery" [(ngModel)]="freedelivery">
+            <label for="">Yes</label>
+            <input id="freedelivery" type="radio" name="freedelivery" [(ngModel)]="freedelivery">
+            <label for="">No</label>
+
+            <br><br>
+            <button class="greenbg fcwhite" (click)="addcart()">Add to cart</button><br>
+            <button class="darkgraybg fcwhite" (click)="deletefitem()">Delete first item</button>
+            <button class="darkgraybg fcwhite" (click)="deletelitem()">Delete last item</button>
+            <button class="darkgraybg fcwhite" (click)="preverse()">Reverse the items</button>
+        </div>
+    </div>
+    <div class="bsection">
+        <table class="fcwhite" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Free Delivery</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.rating}}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

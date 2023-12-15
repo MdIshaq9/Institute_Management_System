@@ -1,0 +1,23 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    width: 100vw;
+    height: 100vh;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+}
+input{
+    margin-bottom: 10px;
+}
+form{
+    padding-left: 150px;
+    background-color: aquamarine;
+    width: 30%;
+    height: 30%;
+}

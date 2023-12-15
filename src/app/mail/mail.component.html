@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mail of mails" >
+            <td [ngClass]="{'black':mail.completed==true, 'gray':mail.completed==false}">{{mail.id}}</td>
+            <td [ngClass]="{'black':mail.completed==true, 'gray':mail.completed==false}">{{mail.title}}</td>
+        </tr>
+    </tbody>
+</table>

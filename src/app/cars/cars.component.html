@@ -1,0 +1,13 @@
+<h2>Cars</h2>
+
+<label for="">Honda</label>
+<input type="radio" name="car" value="honda" [(ngModel)]="cars">
+<label for="">BMW</label>
+<input type="radio" name="car" value="bmw" [(ngModel)]="cars">
+<label for="">Audi</label>
+<input type="radio" name="car" value="audi" [(ngModel)]="cars">
+<br>
+
+<img *ngIf="cars == 'honda'" src="https://www.carlelo.com/laravel/public/uploads/variant/guuxmDVnCushMNxueb1s1SjVywsEtmQKNqFnNojj.jpeg" alt="honda">
+<img  *ngIf="cars == 'bmw'" src="https://imgd.aeplcdn.com/642x336/n/cw/ec/140591/x1-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80" alt="bmw">
+<img *ngIf="cars == 'audi'" src="https://www.superluxurycars.in/wp-content/uploads/2022/12/AUDI-A4-643x410.webp" alt="audi">

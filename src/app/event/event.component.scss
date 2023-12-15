@@ -1,0 +1,19 @@
+.parent{
+    padding: 50px;
+}
+input{
+    padding: 5px;
+}
+button{
+    margin-left: 10px;
+    padding: 6px;
+    border: 0px;
+    background-color: gray;
+    width: 100px;
+    color: white;
+    font-weight: 700;
+}
+button:hover {
+    cursor: pointer;
+    background-color: rgb(101, 101, 101);
+}

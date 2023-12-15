@@ -1,0 +1,17 @@
+<h2>Marks Sheet</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let marksheet of marksheets">
+            <td>{{marksheet.name}}</td>
+            <td [ngStyle]="{'color': marksheet.marks>=35 ? 'green' : 'red' }">{{marksheet.marks}}</td>
+            <td [ngClass]="{'green': marksheet.grade =='a', 'blue': marksheet.grade=='b', 'red': marksheet.grade=='c'}">{{marksheet.grade}}</td>
+        </tr>
+    </tbody>
+</table>

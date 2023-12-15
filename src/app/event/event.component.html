@@ -1,0 +1,10 @@
+<div class="parent">
+    <h2>Event Registration</h2>
+    <input type="text" placeholder="Enter Name" [(ngModel)]="userName">
+    <button (click)="submit()">Submit</button>
+    <h2>Registered Users</h2>
+    <ol>
+        <li *ngFor="let user of users">{{user}}</li>
+    </ol>
+    <button type="button" *ngIf="users.length>0" (click)="delete()">delete</button>
+</div>

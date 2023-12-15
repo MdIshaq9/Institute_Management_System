@@ -1,0 +1,95 @@
+<div class="paddingleft">
+    <h1>Student Form</h1>
+    <form [formGroup]="studentForm">
+        <label>Name: </label>
+        <input type="text" formControlName="name">
+        <div *ngIf="studentForm.get('name')?.touched || studentForm.get('name')?.dirty">
+            <p *ngIf="studentForm.get('name')?.errors?.['required']">Name is required</p>
+            <p *ngIf="studentForm.get('name')?.errors?.['minlength']">Min 3 chars required</p>
+            <p *ngIf="studentForm.get('name')?.errors?.['maxlength']">Max 10 chars allowed</p>
+        </div>
+        <br>
+
+        <label>Class: </label>
+        <input type="text" formControlName="class">
+        <div *ngIf="studentForm.get('class')?.touched || studentForm.get('class')?.dirty">
+            <p *ngIf="studentForm.get('class')?.errors?.['required']">Enter class studying</p>
+        </div>
+        <br>
+
+        <label>Email: </label>
+        <input type="text" formControlName="email">
+        <div *ngIf="studentForm.get('email')?.touched || studentForm.get('email')?.dirty">
+            <p *ngIf="studentForm.get('email')?.errors?.['required']">Email is required</p>
+            <p *ngIf="studentForm.get('email')?.errors?.['email']">Enter a valid email</p>
+        </div>
+        <br>
+
+        <label>Percentage: </label>
+        <input type="text" formControlName="percentage">
+        <div *ngIf="studentForm.get('percentage')?.touched || studentForm.get('percentage')?.dirty">
+            <p *ngIf="studentForm.get('percentage')?.errors?.['required']">Percentage required</p>
+            <p *ngIf="studentForm.get('percentage')?.errors?.['max']">Enter a valid Percentage</p>
+        </div>
+        <br>
+
+        <label>DOB: </label>
+        <input type="date">
+        <br>
+
+        <div formGroupName="address">
+
+            <h2>Address</h2>
+            <label>Address Line: </label>
+            <input type="text" formControlName="addressline"><br>
+            <label>City: </label>
+            <input type="text" formControlName="city"><br>
+            <label>State: </label>
+            <input type="text" formControlName="state"><br>
+            <label>Pincode: </label>
+            <input type="text" formControlName="pincode"><br>
+            <div *ngIf="studentForm.get('address')?.get('pincode')?.touched || studentForm.get('address')?.get('pincode')?.dirty">
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['required']">Pincode is required</p>
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['min']">Min 6 digits required</p>
+                <p *ngIf="studentForm.get('address')?.get('pincode')?.errors?.['max']">Max 6 digits allowed</p>
+            </div>
+
+        </div>
+
+        <h2>Marks</h2>
+        <div formArrayName="cards">
+            <div *ngFor="let card of cardsFromArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <label>Class</label>
+                    <input type="text"><br>
+                    <label>Percentage</label>
+                    <input type="text"><br>                   
+                    <button (click)="delete(i)">Delete</button>
+
+                </div>
+            </div>
+            <button (click)="add()">Add</button>
+        </div><br>
+
+        <h2>Student type: </h2>
+
+        <input type="radio" name="type" value="dayScholar" formControlName="type">
+        <label>Day Sholar </label>
+        <input type="radio" name="type" value="residential" fromControlName="type">
+        <label>Residential</label>
+
+        <div *ngIf="studentForm.get('type')?.value=='dayScholar'">
+            <label>Bus-Fee</label>
+            <input type="number" name="type" formControlName="busfees"><br>
+        </div>
+
+        <div *ngIf="studentForm.get('type')?.value=='residential'">
+            <label>Hostel Fee</label>
+            <input type="number" name="type" formControlName="hostelfees"><br>
+        </div>
+       
+
+        <button (click)="submit()">submit</button><br><br>
+
+    </form>
+</div>
